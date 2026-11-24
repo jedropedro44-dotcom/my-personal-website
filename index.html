@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krypton Designs | Creative Studio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gold: #d4af37;
+    --black: #090909;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+    --panel: #171717;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(9,9,9,0.95);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 8% 80px;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(circle at 80% 50%, #49390d 0%, transparent 35%),
+      linear-gradient(120deg,#090909,#161616);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: var(--gray);
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: var(--gold);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--gold);
+    margin-left: 12px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.section-title p {
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+/* SERVICES */
+
+.services {
+    background: #111;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--panel);
+    padding: 35px 25px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--gray);
+}
+
+/* PORTFOLIO */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
+}
+
+.portfolio-card {
+    background: var(--panel);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: scale(1.03);
+}
+
+.portfolio-image {
+    height: 220px;
+    background: linear-gradient(135deg,#33270b,#d4af37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+}
+
+.portfolio-card h3 {
+    padding: 18px 18px 5px;
+    color: var(--gold);
+}
+
+.portfolio-card p {
+    padding: 0 18px 20px;
+    color: var(--gray);
+}
+
+/* ABOUT */
+
+.about {
+    background: #111;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-box {
+    background: linear-gradient(135deg,#4b3b10,#171717);
+    min-height: 300px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-text h2 span {
+    color: var(--gold);
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #090909;
+}
+
+.contact-container {
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact-form {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 16px;
+    background: #191919;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #151515;
+    border-top: 1px solid #333;
+}
+
+footer h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: var(--gray);
+}
+
+/* ANIMATION */
+
+.fade-in {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width:768px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .btn-outline {
+        margin: 12px 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="logo">KRYPTON.</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="hero-content fade-in">
+
+        <h1>
+            WE CREATE<br>
+            <span>VISUAL MAGIC.</span>
+        </h1>
+
+        <p>
+            Welcome to Krypton Designs.
+            We transform ideas into powerful visual experiences
+            through creativity, innovation and professional design.
+        </p>
+
+        <a href="#portfolio" class="btn">
+            Explore Our Work
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+            Hire Us
+        </a>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+        <h2>Our <span>Services</span></h2>
+        <p>Creative solutions for your brand and business.</p>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Graphic Design</h3>
+            <p>
+                Professional posters, flyers, banners
+                and creative promotional artwork.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✏️</div>
+            <h3>Logo Design</h3>
+            <p>
+                Unique logos and visual identities
+                that make businesses stand out.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">👕</div>
+            <h3>Jersey Design</h3>
+            <p>
+                Custom football jerseys, sportswear,
+                uniforms and T-shirt designs.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>Social Media</h3>
+            <p>
+                Creative digital advertisements
+                and social media content.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🖨️</div>
+            <h3>Printing Design</h3>
+            <p>
+                Business cards, brochures,
+                stickers and print-ready artwork.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Web Design</h3>
+            <p>
+                Modern and responsive websites
+                for individuals and businesses.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+    <div class="section-title">
+        <h2>Our <span>Portfolio</span></h2>
+        <p>A showcase of creative possibilities.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+            <div class="portfolio-image">🎨</div>
+            <h3>Brand Identity</h3>
+            <p>Creative branding concepts.</p>
+        </div>
+
+        <div class="portfolio-card">
+            <div class="portfolio-image">👕</div>
+            <h3>Sportswear</h3>
+            <p>Custom jersey concepts.</p>
+        </div>
+
+        <div class="portfolio-card">
+            <div class="portfolio-image">📢</div>
+            <h3>Advertising</h3>
+            <p>Promotional poster designs.</p>
+        </div>
+
+        <div class="portfolio-card">
+            <div class="portfolio-image">💻</div>
+            <h3>Digital Design</h3>
+            <p>Modern digital experiences.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <div class="about-box">
+            KD
+        </div>
+
+        <div class="about-text">
+
+            <h2>About <span>Krypton Designs</span></h2>
+
+            <p>
+                Krypton Designs is a creative design brand
+                focused on delivering modern, attractive
+                and professional visual solutions.
+            </p>
+
+            <p>
+                Our passion is transforming ordinary ideas
+                into extraordinary designs that communicate,
+                inspire and build powerful brands.
+            </p>
+
+            <p>
+                Creativity is our identity.
+                Excellence is our standard.
+            </p>
+
+            <a href="#contact" class="btn">
+                Work With Us
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Contact <span>Us</span></h2>
+        <p>Let's create something amazing together.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <form class="contact-form" id="contactForm">
+
+            <input type="text"
+                   id="name"
+                   placeholder="Your Full Name"
+                   required>
+
+            <input type="email"
+                   id="email"
+                   placeholder="Your Email Address"
+                   required>
+
+            <input type="text"
+                   id="subject"
+                   placeholder="Project Subject"
+                   required>
+
+            <textarea id="message"
+                      placeholder="Tell us about your project..."
+                      required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>KRYPTON DESIGNS</h3>
+
+    <p>Creativity Meets Excellence.</p>
+
+    <p>
+        © <span id="year"></span>
+        Krypton Designs. All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+    document.getElementById("navbar")
+    .classList.toggle("active");
+}
+
+document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar")
+        .classList.remove("active");
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    alert(
+        "Thank you " + name +
+        "! Your message has been received in this demo. " +
+        "A real email service must be connected to deliver it."
+    );
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+
+        .profile {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .phone {
+            background: green;
+            color: white;
+            padding: 12px;
+            display: inline-block;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile">
+
+        <img src=<img src="alt="https://kommodo.ai/i/SprEWkdT4Kcg69g9Z5fQ">" alt="My Personal Photo" width="250">
+
+        <h1>Thee Krypton</h1>
+
+        <p>Welcome to my personal website.</p>
+
+        <h3>Contact Me</h3>
+
+        <a class="phone" href="tel:+254705606296">
+            Call Me
+        </a>
+
+        <p>
+            <a href="https://wa.me/254705606296">
+                Chat with me on WhatsApp
+            </a>
+        </p>
+
+    </div>
+
+</body>
+</html>
